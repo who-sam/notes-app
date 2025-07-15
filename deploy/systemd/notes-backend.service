@@ -1,0 +1,14 @@
+[Unit]
+Description=Notes App Flask Backend
+After=network.target
+
+[Service]
+User=ec2-user
+WorkingDirectory=/home/ec2-user/notes-web-app/backend
+Environment="FLASK_APP=app.py"
+EnvironmentFile=/home/ec2-user/notes-web-app/backend/.env
+ExecStart=/home/ec2-user/notes-web-app/backend/venv/bin/gunicorn -w 4 -b 0.0.0.0:5000 app:app
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
