@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Catppuccin Mocha Color Palette */
+    --background: 240 21% 15%; /* Base */
+    --foreground: 226 64% 88%; /* Text */
+
+    --card: 230 13% 29%; /* Overlay1 */
+    --card-foreground: 226 64% 88%; /* Text */
+
+    --popover: 230 13% 29%; /* Overlay1 */
+    --popover-foreground: 226 64% 88%; /* Text */
+
+    --primary: 217 92% 76%; /* Blue */
+    --primary-foreground: 240 21% 15%; /* Base */
+
+    --secondary: 229 13% 38%; /* Surface0 */
+    --secondary-foreground: 226 64% 88%; /* Text */
+
+    --muted: 230 12% 46%; /* Surface1 */
+    --muted-foreground: 227 35% 80%; /* Subtext1 */
+
+    --accent: 267 84% 81%; /* Mauve */
+    --accent-foreground: 240 21% 15%; /* Base */
+
+    --destructive: 343 81% 75%; /* Red */
+    --destructive-foreground: 226 64% 88%; /* Text */
+
+    --border: 228 13% 54%; /* Surface2 */
+    --input: 229 13% 38%; /* Surface0 */
+    --ring: 217 92% 76%; /* Blue */
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Using Catppuccin Mocha as default - no dark mode toggle needed */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
