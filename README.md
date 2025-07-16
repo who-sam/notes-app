@@ -225,7 +225,11 @@ sudo chmod +x /usr/local/bin/backup_db.sh
 sudo crontab -e
 ```
 ```bash
+# Daily backup at 2 AM
 0 2 * * * /usr/local/bin/backup_db.sh
+
+# Log rotation
+0 3 * * * find /var/log/backup.log -mtime +30 -delete
 ```
 
 ## Project Structure
