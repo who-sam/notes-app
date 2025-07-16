@@ -2,7 +2,7 @@
 
 A full-stack note-taking application with a React frontend and Flask backend, deployed on AWS EC2 with automated backups.
 
-![Notes Application Screenshot](https://via.placeholder.com/800x400?text=Notes+App+Screenshot)
+![Notes Application Screenshot](https://raw.githubusercontent.com/who-sam/who-sam/main/assets/notes_app2.png)
 
 ## Features
 
