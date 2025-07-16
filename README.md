@@ -190,7 +190,6 @@ sudo nano /usr/local/bin/backup_db.sh
 ```
 ```bash
 #!/bin/bash
-#!/bin/bash
 
 # Backup directory
 BACKUP_DIR="/backup/db"
