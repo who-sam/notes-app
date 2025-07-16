@@ -119,6 +119,7 @@ After=network.target
 [Service]
 User=ec2-user
 WorkingDirectory=/home/ec2-user/notes-web-app/backend
+Environment="FLASK_APP=app.py"
 EnvironmentFile=/home/ec2-user/notes-web-app/backend/.env
 ExecStart=/home/ec2-user/notes-web-app/backend/venv/bin/gunicorn -w 4 -b 0.0.0.0:5000 app:app
 Restart=always
@@ -134,7 +135,7 @@ sudo nano /etc/nginx/conf.d/notes-app.conf
 ```nginx
 server {
     listen 80;
-    server_name your-domain.com;
+    server_name <your-server-name> localhost;
     
     root /home/ec2-user/notes-web-app/frontend/dist;
     index index.html;
@@ -148,6 +149,18 @@ server {
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        
+        # Handle preflight requests
+        if ($request_method = 'OPTIONS') {
+            add_header 'Access-Control-Allow-Origin' '*';
+            add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, OPTIONS';
+            add_header 'Access-Control-Allow-Headers' 'DNT,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Range';
+            add_header 'Access-Control-Max-Age' 1728000;
+            add_header 'Content-Type' 'text/plain; charset=utf-8';
+            add_header 'Content-Length' 0;
+            return 204;
+        }
     }
 }
 ```
