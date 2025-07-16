@@ -106,7 +106,7 @@ mysql -u notes_user -p notes_app < notes_backup.sql
 ```
 
 ### Automated Backup
-Use the [backup script](../backup_db.sh) configured in cron
+Use the [backup script](./backup_db.sh) configured in cron
 
 ## Troubleshooting
 
