@@ -36,6 +36,9 @@ A full-stack note-taking application with a React frontend and Flask backend, de
 - EBS Volumes for Backups
 - Cron Jobs
 
+### System Architecture
+<img src="https://raw.githubusercontent.com/who-sam/who-sam/main/assets/system_struct.png" width="500"/>
+
 ## Installation (Development)
 
 ### Prerequisites
