@@ -111,7 +111,7 @@ npm run build
 4. **Service Configuration**
 ```bash
 # Create systemd service
-sudo nano /etc/systemd/system/notes-backend.service
+sudo vim /etc/systemd/system/notes-backend.service
 ```
 ```ini
 [Unit]
@@ -132,7 +132,7 @@ WantedBy=multi-user.target
 
 5. **Nginx Configuration**
 ```bash
-sudo nano /etc/nginx/conf.d/notes-app.conf
+sudo vim /etc/nginx/conf.d/notes-app.conf
 ```
 ```nginx
 server {
@@ -188,7 +188,7 @@ sudo setsebool -P httpd_can_network_relay 1
 8. **Backup Setup**
 ```bash
 # Create backup script
-sudo nano /usr/local/bin/backup_db.sh
+sudo vim /usr/local/bin/backup_db.sh
 ```
 ```bash
 #!/bin/bash
