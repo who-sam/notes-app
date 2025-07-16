@@ -20,7 +20,6 @@ A full-stack note-taking application with a React frontend and Flask backend, de
 - TypeScript
 - Tailwind CSS
 - Shadcn UI Components
-- React Router
 
 ### Backend
 - Python
